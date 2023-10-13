@@ -5,6 +5,7 @@ pipeline {
        STAGING = "nirou-staging"
        PRODUCTION = "nirou-production"
        PREFIX = "mounihamad"
+       VAR=""
      }
      agent none
      stages {
