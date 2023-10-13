@@ -2,8 +2,8 @@ pipeline {
      environment {
        IMAGE_NAME = "alpinehelloworld"
        IMAGE_TAG = "latest"
-       STAGING = "eazytraining-staging"
-       PRODUCTION = "eazytraining-production"
+       STAGING = "nirou-staging"
+       PRODUCTION = "nirou-production"
        PREFIX = "mounihamad"
      }
      agent none
@@ -50,7 +50,7 @@ pipeline {
      }
      stage('Push image in staging and deploy it') {
        when {
-              expression { GIT_BRANCH == 'origin/main' }
+              expression { GIT_BRANCH == 'origin/master' }
             }
       agent any
       environment {
@@ -69,7 +69,7 @@ pipeline {
      }
      stage('Push image in production and deploy it') {
        when {
-              expression { GIT_BRANCH == 'origin/main' }
+              expression { GIT_BRANCH == 'origin/master' }
             }
       agent any
       environment {
